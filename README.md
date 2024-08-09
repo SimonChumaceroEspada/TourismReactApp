@@ -20,11 +20,12 @@ Explore Bolivia's beauty with our web app! Discover tourist spots, local food, a
    ```sh
    git clone https://github.com/SimonChumaceroEspada/TurismReactApp.git
    cd tourism-web-app
-
+   ```
 2. **Run the backend:**
   ```sh
    cd 
-   dotnet run 
+   dotnet run
+   ```
 3. **Run the frontend:**
 ```sh
     cd
