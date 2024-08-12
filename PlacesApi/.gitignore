@@ -1,0 +1,14 @@
+# Archivos de configuración
+appsettings.json
+appsettings.Development.json
+
+# Archivos binarios
+/bin/
+/obj/
+
+# Archivos de usuario
+*.user
+
+# vs
+.vs
+../vs
