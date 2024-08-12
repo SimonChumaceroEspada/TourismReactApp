@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{23C6ECC7-AE57-482E-A89F-513C596ED861}|PlacesApi\\PlacesApi.csproj|solutionrelative:placesapi\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{23C6ECC7-AE57-482E-A89F-513C596ED861}|PlacesApi\\PlacesApi.csproj|c:\\users\\simon\\onedrive\\escritorio\\nueva carpeta (4)\\tourismreactapp\\placesapi\\placesapi\\placesapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{23C6ECC7-AE57-482E-A89F-513C596ED861}|PlacesApi\\PlacesApi.csproj|solutionrelative:placesapi\\placesapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{23C6ECC7-AE57-482E-A89F-513C596ED861}|PlacesApi\\PlacesApi.csproj|c:\\users\\simon\\onedrive\\escritorio\\nueva carpeta (4)\\tourismreactapp\\placesapi\\placesapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{23C6ECC7-AE57-482E-A89F-513C596ED861}|PlacesApi\\PlacesApi.csproj|solutionrelative:placesapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23C6ECC7-AE57-482E-A89F-513C596ED861}|PlacesApi\\PlacesApi.csproj|c:\\users\\simon\\onedrive\\escritorio\\nueva carpeta (4)\\tourismreactapp\\placesapi\\placesapi\\placesapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{23C6ECC7-AE57-482E-A89F-513C596ED861}|PlacesApi\\PlacesApi.csproj|solutionrelative:placesapi\\placesapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{23C6ECC7-AE57-482E-A89F-513C596ED861}|PlacesApi\\PlacesApi.csproj|c:\\users\\simon\\onedrive\\escritorio\\nueva carpeta (4)\\tourismreactapp\\placesapi\\placesapi\\application\\services\\placeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -46,33 +46,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": ".gitignore",
-              "DocumentMoniker": "C:\\Users\\SIMON\\OneDrive\\Escritorio\\Nueva carpeta (4)\\TourismReactApp\\PlacesApi\\PlacesApi\\.gitignore",
-              "RelativeDocumentMoniker": "PlacesApi\\.gitignore",
-              "ToolTip": "C:\\Users\\SIMON\\OneDrive\\Escritorio\\Nueva carpeta (4)\\TourismReactApp\\PlacesApi\\PlacesApi\\.gitignore",
-              "RelativeToolTip": "PlacesApi\\.gitignore",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF8SURBVDhPjVNLTgJBEG1lwpoFB3GNK9fieA48hD8iwT/ihwgSDAIHgAGXXsEV18CNzL/LquqZdsYM6kteXqcy3fWqpmpNRBgOhyABBEgpAFVKPIMUcYzUyOU\u002BXM/b2qtU3vkSfRjjZTCAMAw1A2LwzdFoBPP5HNqdzuL27n4juibWI\u002BUshBA1DIkhEx9iEorFotgslQqGYbxxAGFEqt1MxmPWJLbLZdZ\u002Bv89q5PMFPiTR6z2zdaxR0fXA0XTBcVywkb4fwHXjRteecIDNQ7UmExVYAdPcxYaqclN46na5WenMKjtlVnTYwcXlVYaDqImW9beD5N/TeGy32QHXm6hZ03ZgiSQHp2fnWQ4oBmJqWSqwAqZpZjt4aLXAD4J0VqyZsmoubfB8H2r1eoaD6NXZ9HcHO\u002BSA3f4AjifXl8rItOETM8ckB9WTWpYD9RdeZ1PWVWAHWXPQaDb59f/w8LiqHeh1pvGkCaP6qB8yXusoxmuNZ7XmII4O9vGuEF86osuDYRkpYQAAAABJRU5ErkJggg==",
-              "WhenOpened": "2024-08-12T13:55:30.037Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PlacesApi.http",
-              "DocumentMoniker": "C:\\Users\\SIMON\\OneDrive\\Escritorio\\Nueva carpeta (4)\\TourismReactApp\\PlacesApi\\PlacesApi\\PlacesApi.http",
-              "RelativeDocumentMoniker": "PlacesApi\\PlacesApi.http",
-              "ToolTip": "C:\\Users\\SIMON\\OneDrive\\Escritorio\\Nueva carpeta (4)\\TourismReactApp\\PlacesApi\\PlacesApi\\PlacesApi.http",
-              "RelativeToolTip": "PlacesApi\\PlacesApi.http",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2024-08-10T18:16:20.507Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
@@ -111,15 +86,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\SIMON\\OneDrive\\Escritorio\\Nueva carpeta (4)\\TourismReactApp\\PlacesApi\\PlacesApi\\appsettings.json",
               "RelativeDocumentMoniker": "PlacesApi\\appsettings.json",
               "ToolTip": "C:\\Users\\SIMON\\OneDrive\\Escritorio\\Nueva carpeta (4)\\TourismReactApp\\PlacesApi\\PlacesApi\\appsettings.json",
               "RelativeToolTip": "PlacesApi\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAABGAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-08-09T14:44:04.913Z"
+              "WhenOpened": "2024-08-09T14:44:04.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\SIMON\\OneDrive\\Escritorio\\Nueva carpeta (4)\\TourismReactApp\\PlacesApi\\PlacesApi\\.gitignore",
+              "RelativeDocumentMoniker": "PlacesApi\\.gitignore",
+              "ToolTip": "C:\\Users\\SIMON\\OneDrive\\Escritorio\\Nueva carpeta (4)\\TourismReactApp\\PlacesApi\\PlacesApi\\.gitignore",
+              "RelativeToolTip": "PlacesApi\\.gitignore",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAfAAAA",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF8SURBVDhPjVNLTgJBEG1lwpoFB3GNK9fieA48hD8iwT/ihwgSDAIHgAGXXsEV18CNzL/LquqZdsYM6kteXqcy3fWqpmpNRBgOhyABBEgpAFVKPIMUcYzUyOU\u002BXM/b2qtU3vkSfRjjZTCAMAw1A2LwzdFoBPP5HNqdzuL27n4juibWI\u002BUshBA1DIkhEx9iEorFotgslQqGYbxxAGFEqt1MxmPWJLbLZdZ\u002Bv89q5PMFPiTR6z2zdaxR0fXA0XTBcVywkb4fwHXjRteecIDNQ7UmExVYAdPcxYaqclN46na5WenMKjtlVnTYwcXlVYaDqImW9beD5N/TeGy32QHXm6hZ03ZgiSQHp2fnWQ4oBmJqWSqwAqZpZjt4aLXAD4J0VqyZsmoubfB8H2r1eoaD6NXZ9HcHO\u002BSA3f4AjifXl8rItOETM8ckB9WTWpYD9RdeZ1PWVWAHWXPQaDb59f/w8LiqHeh1pvGkCaP6qB8yXusoxmuNZ7XmII4O9vGuEF86osuDYRkpYQAAAABJRU5ErkJggg==",
+              "WhenOpened": "2024-08-12T13:55:30.037Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PlacesApi.http",
+              "DocumentMoniker": "C:\\Users\\SIMON\\OneDrive\\Escritorio\\Nueva carpeta (4)\\TourismReactApp\\PlacesApi\\PlacesApi\\PlacesApi.http",
+              "RelativeDocumentMoniker": "PlacesApi\\PlacesApi.http",
+              "ToolTip": "C:\\Users\\SIMON\\OneDrive\\Escritorio\\Nueva carpeta (4)\\TourismReactApp\\PlacesApi\\PlacesApi\\PlacesApi.http",
+              "RelativeToolTip": "PlacesApi\\PlacesApi.http",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2024-08-10T18:16:20.507Z"
             },
             {
               "$type": "Document",

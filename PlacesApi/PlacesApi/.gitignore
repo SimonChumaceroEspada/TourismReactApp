@@ -11,4 +11,3 @@ appsettings.Development.json
 
 # Otros archivos que no deben ser subidos
 /Properties/launchSettings.json
-/PlacesApi/Properties/launchSettings.json
