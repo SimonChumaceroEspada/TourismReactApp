@@ -1,4 +1,4 @@
-# TurismReactApp
+# TourismmReactApp
 # Tourism Web App for Bolivia
 
 ## Overview
