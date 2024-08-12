@@ -8,3 +8,7 @@ appsettings.Development.json
 
 # Archivos de usuario
 *.user
+
+# vs
+.vs
+../vs
