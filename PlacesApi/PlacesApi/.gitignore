@@ -8,6 +8,3 @@ appsettings.Development.json
 
 # Archivos de usuario
 *.user
-
-# Otros archivos que no deben ser subidos
-/Properties/launchSettings.json
