@@ -22,7 +22,8 @@ namespace PlacesApi.Application.Services
                 Name = p.Name,
                 Capital = p.Capital,
                 Image = p.Image,
-                Description = p.Description
+                EspDescription = p.EspDescription,
+                EngDescription = p.EngDescription
             }).ToList();
         }
 
@@ -31,7 +32,7 @@ namespace PlacesApi.Application.Services
             var place = await _placeRepository.GetByIdAsync(id);
             if (place == null)
             {
-                return null; 
+                return null;
             }
 
             return new PlaceDto
@@ -40,7 +41,8 @@ namespace PlacesApi.Application.Services
                 Name = place.Name,
                 Capital = place.Capital,
                 Image = place.Image,
-                Description = place.Description
+                EspDescription = place.EspDescription,
+                EngDescription = place.EngDescription
             };
         }
 
@@ -58,7 +60,8 @@ namespace PlacesApi.Application.Services
                 Name = place.Name,
                 Capital = place.Capital,
                 Image = place.Image,
-                Description = place.Description
+                EspDescription = place.EspDescription,
+                EngDescription = place.EngDescription
             };
         }
 

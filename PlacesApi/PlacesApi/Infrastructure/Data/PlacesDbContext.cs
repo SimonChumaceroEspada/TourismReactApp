@@ -5,7 +5,7 @@ public class PlacesDbContext : DbContext
 {
     public PlacesDbContext(DbContextOptions<PlacesDbContext> options) : base(options) { }
 
-    public DbSet<Place> Places { get; set; }
+    public DbSet<Place> Place { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -27,11 +27,15 @@ public class PlacesDbContext : DbContext
 
         modelBuilder.Entity<Place>()
             .Property(p => p.Image)
-            .HasMaxLength(500); // Limita la longitud del campo Image
+            .HasMaxLength(8000); // Limita la longitud del campo Image
 
         modelBuilder.Entity<Place>()
-            .Property(p => p.Description)
-            .HasMaxLength(1000); // Limita la longitud del campo Description
+            .Property(p => p.EspDescription)
+            .HasMaxLength(8000); // Limita la longitud del campo Description
+
+        modelBuilder.Entity<Place>()
+            .Property(p => p.EngDescription)
+            .HasMaxLength(8000);
 
         // Opcionalmente, puedes agregar un índice único en el campo Name si es necesario
         // modelBuilder.Entity<Place>()

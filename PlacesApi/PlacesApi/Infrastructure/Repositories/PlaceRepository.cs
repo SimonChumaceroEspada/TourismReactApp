@@ -15,36 +15,36 @@ namespace PlacesApi.Infrastructure.Repositories
 
         public async Task<IEnumerable<Place>> GetAllAsync()
         {
-            return await _context.Places.ToListAsync();
+            return await _context.Place.ToListAsync();
         }
 
         public async Task<Place> GetByIdAsync(int id)
         {
-            return await _context.Places.FindAsync(id);
+            return await _context.Place.FindAsync(id);
         }
 
         public Task<Place> GetByNameAsync(string name)
         {
-            return _context.Places.FirstOrDefaultAsync(p => p.Name.ToLower() == name.ToLower());
+            return _context.Place.FirstOrDefaultAsync(p => p.Name.ToLower() == name.ToLower());
         }
         public async Task AddAsync(Place place)
         {
-            await _context.Places.AddAsync(place);
+            await _context.Place.AddAsync(place);
             await _context.SaveChangesAsync();
         }
 
         public async Task UpdateAsync(Place place)
         {
-            _context.Places.Update(place);
+            _context.Place.Update(place);
             await _context.SaveChangesAsync();
         }
 
         public async Task DeleteAsync(int id)
         {
-            var place = await _context.Places.FindAsync(id);
+            var place = await _context.Place.FindAsync(id);
             if (place != null)
             {
-                _context.Places.Remove(place);
+                _context.Place.Remove(place);
                 await _context.SaveChangesAsync();
             }
         }

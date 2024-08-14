@@ -1,6 +1,6 @@
 using PlacesApi.Application.DTOs;
 
-namespace PlacesApi.Application.Services
+namespace PlacesApi.Domain.Interfaces
 {
     public interface IPlaceService
     {
