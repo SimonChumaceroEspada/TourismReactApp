@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using PlacesApi.Application.DTOs;
-using PlacesApi.Application.Services;
+using PlacesApi.Domain.Interfaces;
 
 namespace PlacesApi.API.Controllers
 {
