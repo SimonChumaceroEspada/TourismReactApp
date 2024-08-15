@@ -12,6 +12,8 @@ builder.Services.AddDbContext<PlacesDbContext>(options =>
 // Add services to the container.
 builder.Services.AddScoped<IPlaceService, PlaceService>();
 builder.Services.AddScoped<IPlaceRepository, PlaceRepository>();
+builder.Services.AddScoped<ITouristicPlaceService, TouristicPlaceService>();
+builder.Services.AddScoped<ITouristicPlaceRepository, TouristicPlaceRepository>();
 
 // Add CORS Service
 builder.Services.AddCors(options =>

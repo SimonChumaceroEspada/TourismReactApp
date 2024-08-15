@@ -8,6 +8,7 @@
         public string Image { get; set; }
         public string EspDescription { get; set; }
         public string EngDescription { get; set; }
+        public List<TouristicPlace> TouristicPlaces { get; set; }
 
     }
 }
