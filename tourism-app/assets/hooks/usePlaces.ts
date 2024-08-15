@@ -4,8 +4,9 @@ import axios from "axios";
 interface Place {
   id: number;
   name: string;
-  description: string;
   capital: string;
+  espDescription: string;
+  engDescription: string;
   image: string;
 }
 
@@ -18,7 +19,8 @@ const usePlaces = () => {
       .then((response) => {
         console.log(response.data); 
         if (Array.isArray(response.data)) {
-          setPlaces(response.data);
+          const sortedData = response.data.sort((a, b) => a.id - b.id);
+          setPlaces(sortedData);
         } else {
           console.error("Response is not an array:", response.data);
         }
@@ -32,4 +34,3 @@ const usePlaces = () => {
 };
 
 export default usePlaces;
-

@@ -1,52 +1,48 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React from "react";
+import { ScrollView, View, Text, Image, StyleSheet } from "react-native";
+import usePlaces from "../hooks/usePlaces";
 
 const PlacesList = () => {
-  interface Place {
-    id: number;
-    name: string;
-    description: string;
-    capital: string;
-    image: string;
-  }
-
-  const [places, setPlaces] = useState<Place[]>([]);
-
-    useEffect(() => {
-      axios
-        .get("https://localhost:7183/api/places")
-
-        .then((response) => {
-          console.log(response.data); // Verifica los datos aquí
-          if (Array.isArray(response.data)) {
-            setPlaces(response.data);
-          } else {
-            console.error("La respuesta no es un array:", response.data);
-          }
-        })
-        .catch((error) => {
-          console.error("Hubo un error recuperando los datos!", error);
-        });
-    }, []);
-
+  const places = usePlaces();
 
   return (
-    <div>
-      <h1>Lista de Lugares</h1>
-      <ul>
-        {places.map((place) => (
-          <li key={place.id}>
-            <h2>{place.name}</h2>
-            <p>{place.description}</p>
-            <p>
-              <strong>Capital:</strong> {place.capital}
-            </p>
-            <img src={place.image} alt={place.name} width="200" />
-          </li>
-        ))}
-      </ul>
-    </div>
+    <ScrollView contentContainerStyle={styles.container}>
+      <Text style={styles.title}>Lista de Lugares</Text>
+      {places.map((place) => (
+        <View key={place.id} style={styles.item}>
+          <Text style={styles.name}>{place.name}</Text>
+          <Text>{place.espDescription}</Text>
+          <Text>{place.engDescription}</Text>
+          <Text>
+            <strong>Capital:</strong> {place.capital}
+          </Text>
+          <Image source={{ uri: place.image }} style={styles.image} />
+        </View>
+      ))}
+    </ScrollView>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 10,
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: "bold",
+    marginBottom: 10,
+  },
+  item: {
+    marginBottom: 20,
+  },
+  name: {
+    fontSize: 18,
+    fontWeight: "bold",
+  },
+  image: {
+    width: 200,
+    height: 200,
+  },
+});
 
 export default PlacesList;

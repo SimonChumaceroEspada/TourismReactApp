@@ -1,18 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import PlacesList from './components/PlacesList';
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, ScrollView, View } from "react-native";
+import PlacesList from "./assets/components/PlacesList";
+import TouristicPlacesList from "./assets/components/TouristicPlacesList";
 
 export default function App() {
   return (
-    <PlacesList />
+    <ScrollView contentContainerStyle={styles.container}>
+      <PlacesList />
+      <TouristicPlacesList />
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    padding: 10,
+    backgroundColor: "#fff",
   },
 });
