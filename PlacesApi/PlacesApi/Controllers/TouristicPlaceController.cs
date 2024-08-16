@@ -46,17 +46,5 @@ namespace PlacesApi.API.Controllers
                 return NotFound(new { Message = ex.Message });
             }
         }
-
-        // [HttpPost]
-        // public async Task<IActionResult> CreateTouristicPlace([FromBody] CreateTouristicPlaceDto createTouristicPlaceDto)
-        // {
-        //     if (!ModelState.IsValid)
-        //     {
-        //         return BadRequest(ModelState);
-        //     }
-
-        //     await _touristicPlaceService.CreateTouristicPlaceAsync(createTouristicPlaceDto);
-        //     return CreatedAtAction(nameof(GetTouristicPlaceById), new { id = createTouristicPlaceDto.Id }, createTouristicPlaceDto);
-        // }
     }
 }

@@ -46,52 +46,5 @@ namespace PlacesApi.API.Controllers
                 return NotFound(new { Message = ex.Message });
             }
         }
-
-        // [HttpPost]
-        // public async Task<IActionResult> CreatePlace([FromBody] CreatePlaceDto createPlaceDto)
-        // {
-        //     if (!ModelState.IsValid)
-        //     {
-        //         return BadRequest(ModelState);
-        //     }
-
-        //     await _placeService.CreatePlaceAsync(createPlaceDto);
-        //     return CreatedAtAction(nameof(GetPlaceById), new { id = createPlaceDto.Id }, createPlaceDto);
-        // }
-
-        // [HttpPut("{id}")]
-        // public async Task<IActionResult> UpdatePlace(int id, [FromBody] UpdatePlaceDto updatePlaceDto)
-        // {
-        //     if (!ModelState.IsValid)
-        //     {
-        //         return BadRequest(ModelState);
-        //     }
-
-        //     try
-        //     {
-        //         await _placeService.UpdatePlaceAsync(id, updatePlaceDto);
-        //     }
-        //     catch (KeyNotFoundException)
-        //     {
-        //         return NotFound();
-        //     }
-
-        //     return NoContent();
-        // }
-
-        // [HttpDelete("{id}")]
-        // public async Task<IActionResult> DeletePlace(int id)
-        // {
-        //     try
-        //     {
-        //         await _placeService.DeletePlaceAsync(id);
-        //     }
-        //     catch (KeyNotFoundException)
-        //     {
-        //         return NotFound();
-        //     }
-
-        //     return NoContent();
-        // }
     }
 }

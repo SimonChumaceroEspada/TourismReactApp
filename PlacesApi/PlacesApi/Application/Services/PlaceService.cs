@@ -64,45 +64,5 @@ namespace PlacesApi.Application.Services
                 EngDescription = place.EngDescription
             };
         }
-
-        // public async Task CreatePlaceAsync(CreatePlaceDto createPlaceDto)
-        // {
-        //     var place = new Place
-        //     {
-        //         Name = createPlaceDto.Name,
-        //         Capital = createPlaceDto.Capital,
-        //         Image = createPlaceDto.Image,
-        //         Description = createPlaceDto.Description
-        //     };
-
-        //     await _placeRepository.AddAsync(place);
-        // }
-
-        // public async Task UpdatePlaceAsync(int id, UpdatePlaceDto updatePlaceDto)
-        // {
-        //     var place = await _placeRepository.GetByIdAsync(id);
-        //     if (place == null)
-        //     {
-        //         throw new KeyNotFoundException("Place not found.");
-        //     }
-
-        //     place.Name = updatePlaceDto.Name;
-        //     place.Capital = updatePlaceDto.Capital;
-        //     place.Image = updatePlaceDto.Image;
-        //     place.Description = updatePlaceDto.Description;
-
-        //     await _placeRepository.UpdateAsync(place);
-        // }
-
-        // public async Task DeletePlaceAsync(int id)
-        // {
-        //     var place = await _placeRepository.GetByIdAsync(id);
-        //     if (place == null)
-        //     {
-        //         throw new KeyNotFoundException("Place not found.");
-        //     }
-
-        //     await _placeRepository.DeleteAsync(id);
-        // }
     }
 }

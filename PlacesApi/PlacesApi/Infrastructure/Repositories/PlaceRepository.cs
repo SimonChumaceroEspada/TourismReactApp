@@ -27,28 +27,5 @@ namespace PlacesApi.Infrastructure.Repositories
         {
             return _context.Place.FirstOrDefaultAsync(p => p.Name.ToLower() == name.ToLower());
         }
-        public async Task AddAsync(Place place)
-        {
-            await _context.Place.AddAsync(place);
-            await _context.SaveChangesAsync();
-        }
-
-        public async Task UpdateAsync(Place place)
-        {
-            _context.Place.Update(place);
-            await _context.SaveChangesAsync();
-        }
-
-        public async Task DeleteAsync(int id)
-        {
-            var place = await _context.Place.FindAsync(id);
-            if (place != null)
-            {
-                _context.Place.Remove(place);
-                await _context.SaveChangesAsync();
-            }
-        }
-
-
     }
 }

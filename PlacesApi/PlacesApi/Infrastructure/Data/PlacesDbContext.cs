@@ -32,7 +32,7 @@ public class PlacesDbContext : DbContext
                   entity.HasMany(p => p.TouristicPlaces)
                     .WithOne(t => t.Place)
                     .HasForeignKey(t => t.PlaceId)
-                    .OnDelete(DeleteBehavior.Cascade); // Elimina en cascada los TouristicPlaces relacionados
+                    .OnDelete(DeleteBehavior.Cascade); 
             });
 
             // Configuración de la entidad TouristicPlace
@@ -57,7 +57,7 @@ public class PlacesDbContext : DbContext
           entity.HasOne(e => e.Place)
             .WithMany(p => p.TouristicPlaces)
             .HasForeignKey(e => e.PlaceId)
-            .OnDelete(DeleteBehavior.Cascade); // Asegúrate de que esta línea esté presente
+            .OnDelete(DeleteBehavior.Cascade); 
     });
 
             base.OnModelCreating(modelBuilder);
