@@ -97,3 +97,10 @@ body {
   object-fit: cover; /* Recorta la imagen para mantener el tamaño especificado */
   border-radius: 8px;
 }
+
+@layer utilities {
+  .shadow-custom {
+    box-shadow: 8px 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+}
+

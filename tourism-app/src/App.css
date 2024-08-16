@@ -69,3 +69,63 @@ body {
   border-radius: 8px;
 }
 
+/* styles/globals.css */
+
+@layer utilities {
+  .shadow-card {
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.15), 0 12px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .shadow-card::before,
+  .shadow-card::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 20px; /* Adjust height for the shadow effect */
+    background: rgba(0, 0, 0, 0.1);
+    z-index: -1;
+    transition: opacity 0.3s;
+  }
+
+  .shadow-card::before {
+    top: -10px; /* Adjust to position the shadow above the card */
+    box-shadow: 0 -10px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .shadow-card::after {
+    bottom: -10px; /* Adjust to position the shadow below the card */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  }
+}
+/* styles/globals.css */
+
+@layer utilities {
+  .shadow-card {
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.15), 0 12px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .shadow-card::before,
+  .shadow-card::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 20px; /* Adjust height for the shadow effect */
+    background: rgba(0, 0, 0, 0.1);
+    z-index: -1;
+    transition: opacity 0.3s;
+  }
+
+  .shadow-card::before {
+    top: -10px; /* Adjust to position the shadow above the card */
+    box-shadow: 0 -10px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .shadow-card::after {
+    bottom: -10px; /* Adjust to position the shadow below the card */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  }
+}
