@@ -18,7 +18,7 @@ const useTouristicPlaces = () => {
     axios
       .get("https://localhost:7183/api/TouristicPlace")
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         if (Array.isArray(response.data)) {
           const sortedData = response.data.sort((a, b) => a.id - b.id);
           setTouristicPlaces(sortedData);
