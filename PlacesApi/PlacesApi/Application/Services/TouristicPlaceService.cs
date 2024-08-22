@@ -19,13 +19,13 @@ namespace PlacesApi.Application.Services
             var touristicPlaces = await _touristicPlaceRepository.GetAllAsync();
             return touristicPlaces.Select(p => new TouristicPlaceDto
             {
-                Id = p.Id,
-                EspName = p.EspName,
-                EngName = p.EngName,
-                Image = p.Image,
-                EspDescription = p.EspDescription,
-                EngDescription = p.EngDescription,
-                PlaceId = p.PlaceId
+                Id = p.id,
+                EspName = p.esp_name,
+                EngName = p.eng_name,
+                Image = p.image,
+                EspDescription = p.esp_description,
+                EngDescription = p.eng_description,
+                PlaceId = p.place_id
             }).ToList();
         }
 
@@ -39,13 +39,13 @@ namespace PlacesApi.Application.Services
 
             return new TouristicPlaceDto
             {
-                Id = touristicPlace.Id,
-                EspName = touristicPlace.EspName,
-                EngName = touristicPlace.EngName,
-                Image = touristicPlace.Image,
-                EspDescription = touristicPlace.EspDescription,
-                EngDescription = touristicPlace.EngDescription,
-                PlaceId = touristicPlace.PlaceId
+                Id = touristicPlace.id,
+                EspName = touristicPlace.esp_name,
+                EngName = touristicPlace.eng_name,
+                Image = touristicPlace.image,
+                EspDescription = touristicPlace.esp_description,
+                EngDescription = touristicPlace.eng_description,
+                PlaceId = touristicPlace.place_id,
             };
         }
 
@@ -59,13 +59,13 @@ namespace PlacesApi.Application.Services
 
             return new TouristicPlaceDto
             {
-                Id = touristicPlace.Id,
-                EspName = touristicPlace.EspName,
-                EngName = touristicPlace.EngName,
-                Image = touristicPlace.Image,
-                EspDescription = touristicPlace.EspDescription,
-                EngDescription = touristicPlace.EngDescription,
-                PlaceId = touristicPlace.PlaceId
+                Id = touristicPlace.id,
+                EspName = touristicPlace.esp_name,
+                EngName = touristicPlace.eng_name,
+                Image = touristicPlace.image,
+                EspDescription = touristicPlace.esp_description,
+                EngDescription = touristicPlace.eng_description,
+                PlaceId = touristicPlace.place_id,
             };
         }
     }

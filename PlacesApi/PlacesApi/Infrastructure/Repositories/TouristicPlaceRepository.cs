@@ -25,7 +25,7 @@ namespace PlacesApi.Infrastructure.Repositories
 
         public async Task<TouristicPlace> GetByNameAsync(string name)
         {
-            return await _context.TouristicPlace.FirstOrDefaultAsync(tp => tp.EngName.ToLower() == name.ToLower() || tp.EspName.ToLower() == name.ToLower());
+            return await _context.TouristicPlace.FirstOrDefaultAsync(tp => tp.eng_name.ToLower() == name.ToLower() || tp.esp_name.ToLower() == name.ToLower());
         }
     }
 }
