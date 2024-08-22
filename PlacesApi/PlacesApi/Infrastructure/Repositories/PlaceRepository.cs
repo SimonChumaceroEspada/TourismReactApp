@@ -25,7 +25,7 @@ namespace PlacesApi.Infrastructure.Repositories
 
         public Task<Place> GetByNameAsync(string name)
         {
-            return _context.Place.FirstOrDefaultAsync(p => p.Name.ToLower() == name.ToLower());
+            return _context.Place.FirstOrDefaultAsync(p => p.name.ToLower() == name.ToLower());
         }
     }
 }

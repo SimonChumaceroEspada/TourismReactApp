@@ -18,12 +18,12 @@ namespace PlacesApi.Application.Services
             var places = await _placeRepository.GetAllAsync();
             return places.Select(p => new PlaceDto
             {
-                Id = p.Id,
-                Name = p.Name,
-                Capital = p.Capital,
-                Image = p.Image,
-                EspDescription = p.EspDescription,
-                EngDescription = p.EngDescription
+                Id = p.id,
+                Name = p.name,
+                Capital = p.capital,
+                Image = p.image,
+                EspDescription = p.esp_description,
+                EngDescription = p.eng_description
             }).ToList();
         }
 
@@ -37,12 +37,12 @@ namespace PlacesApi.Application.Services
 
             return new PlaceDto
             {
-                Id = place.Id,
-                Name = place.Name,
-                Capital = place.Capital,
-                Image = place.Image,
-                EspDescription = place.EspDescription,
-                EngDescription = place.EngDescription
+                Id = place.id,
+                Name = place.name,
+                Capital = place.capital,
+                Image = place.image,
+                EspDescription = place.esp_description,
+                EngDescription = place.eng_description
             };
         }
 
@@ -56,12 +56,12 @@ namespace PlacesApi.Application.Services
 
             return new PlaceDto
             {
-                Id = place.Id,
-                Name = place.Name,
-                Capital = place.Capital,
-                Image = place.Image,
-                EspDescription = place.EspDescription,
-                EngDescription = place.EngDescription
+                Id = place.id,
+                Name = place.name,
+                Capital = place.capital,
+                Image = place.image,
+                EspDescription = place.esp_description,
+                EngDescription = place.eng_description
             };
         }
     }
