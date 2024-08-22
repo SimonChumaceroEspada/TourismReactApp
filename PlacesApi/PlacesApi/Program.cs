@@ -14,6 +14,10 @@ builder.Services.AddScoped<IPlaceService, PlaceService>();
 builder.Services.AddScoped<IPlaceRepository, PlaceRepository>();
 builder.Services.AddScoped<ITouristicPlaceService, TouristicPlaceService>();
 builder.Services.AddScoped<ITouristicPlaceRepository, TouristicPlaceRepository>();
+builder.Services.AddScoped<IFoodService, FoodService>();
+builder.Services.AddScoped<IFoodRepository, FoodRepository>();
+builder.Services.AddScoped<IPartyService, PartyService>();
+builder.Services.AddScoped<IPartyRepository, PartyRepository>();
 
 // Add CORS Service
 builder.Services.AddCors(options =>
