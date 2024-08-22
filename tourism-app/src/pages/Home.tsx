@@ -1,13 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../components/Header/Header';
 import Card from '../components/Card/Card';
 import CarouselButtons from '../components/CarrouselButtons/CarrouselButtons';
 import useTouristicPlaces from '../hooks/useTouristicPlaces';
+import Flag from '../components/Flag/Flag'; 
+import Button from '../components/Button/Button';
 
 const Home: React.FC = () => {
   const [activeCard, setActiveCard] = useState(0);
   const [language, setLanguage] = useState<'en' | 'es'>('en');
   const touristicPlaces = useTouristicPlaces();
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveCard((prevCard) =>
+        prevCard === touristicPlaces.length - 1 ? 0 : prevCard + 1
+      );
+    }, 3000); 
+
+    return () => clearInterval(interval); // Limpiar el intervalo al desmontar
+  }, [touristicPlaces.length]);
 
   const handleCardChange = (index: number) => {
     setActiveCard(index);
@@ -18,15 +30,13 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div className="bg-[#FFF8E1] font-['Arial', 'sans-serif'] flex flex-col min-h-screen overflow-auto">
+    <div className="bg-[#FFF8E1] font-['Arial', 'sans-serif'] min-h-screen flex flex-col">
       <Header onLanguageChange={handleLanguageChange} />
-      <div className="bg-[#D32F2F] h-[10px]"></div>
-      <div className="bg-[#FBC02D] h-[10px]"></div>
-      <div className="bg-[#388E3C] h-[10px]"></div>
-      <main className="flex flex-grow overflow-auto">
-        <div className="flex flex-col md:flex-row flex-1">
-          <div className="flex flex-col items-center justify-center w-full md:w-1/2 p-8 relative">
-            <div className="relative w-full flex overflow-hidden">
+      <Flag /> 
+      <main className="flex-1 flex flex-col overflow-y-auto p-8">
+        <div className="flex flex-col md:flex-row w-full">
+          <div className="flex flex-col items-center justify-center w-full md:w-1/2">
+            <div className="relative w-full overflow-hidden">
               <div
                 className="flex transition-transform duration-500"
                 style={{ transform: `translateX(-${activeCard * 100}%)` }}
@@ -34,15 +44,13 @@ const Home: React.FC = () => {
                 {touristicPlaces.map((place, index) => (
                   <div
                     key={place.id}
-                    className="flex-shrink-0 w-full h-full flex items-center justify-center"
+                    className="flex-shrink-0 w-full h-auto flex items-center justify-center px-4 md:px-6"
                   >
-                    <div className="shadow-lg">
-                      <Card
-                        title={language === 'en' ? place.engName : place.espName}
-                        description={language === 'en' ? place.engDescription : place.espDescription}
-                        imageSrc={place.image}
-                      />
-                    </div>
+                    <Card
+                      title={language === 'en' ? place.engName : place.espName}
+                      description={language === 'en' ? place.engDescription : place.espDescription}
+                      imageSrc={place.image}
+                    />
                   </div>
                 ))}
               </div>
@@ -55,10 +63,10 @@ const Home: React.FC = () => {
               />
             </div>
           </div>
-          <div className="flex items-center justify-center w-full md:w-1/2 p-8">
-            <button className="bg-[#209674] hover:bg-[#1E8E7E] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline shadow-md transform hover:scale-105 transition duration-300">
+          <div className="flex items-center justify-center w-full md:w-1/2 mt-8 md:mt-0">
+            <Button onClick={() => alert('Explore More about Bolivia')}>
               Explore More about Bolivia
-            </button>
+            </Button>
           </div>
         </div>
       </main>
@@ -67,5 +75,3 @@ const Home: React.FC = () => {
 };
 
 export default Home;
-
-
