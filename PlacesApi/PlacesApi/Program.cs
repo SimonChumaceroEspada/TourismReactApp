@@ -18,6 +18,8 @@ builder.Services.AddScoped<IFoodService, FoodService>();
 builder.Services.AddScoped<IFoodRepository, FoodRepository>();
 builder.Services.AddScoped<IPartyService, PartyService>();
 builder.Services.AddScoped<IPartyRepository, PartyRepository>();
+builder.Services.AddScoped<IPlacesDataService, PlacesDataService>();
+builder.Services.AddScoped<IPlacesDataRepository, PlacesDataRepository>();
 
 // Add CORS Service
 builder.Services.AddCors(options =>
