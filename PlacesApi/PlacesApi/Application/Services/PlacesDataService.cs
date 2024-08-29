@@ -24,7 +24,8 @@ namespace PlacesApi.Application.Services
                 Image = p.image,
                 EspDescription = p.esp_description,
                 EngDescription = p.eng_description,
-                PlaceId = p.place_id
+                PlaceId = p.place_id,
+                Type = p.type,
             }).ToList();
         }
 
@@ -45,6 +46,7 @@ namespace PlacesApi.Application.Services
                 EspDescription = placesData.esp_description,
                 EngDescription = placesData.eng_description,
                 PlaceId = placesData.place_id,
+                Type = placesData.type,
             };
         }
 
@@ -64,6 +66,7 @@ namespace PlacesApi.Application.Services
                 Image = placesData.image,
                 EspDescription = placesData.esp_description,
                 EngDescription = placesData.eng_description,
+                Type = placesData.type,
                 PlaceId = placesData.place_id,
             };
         }

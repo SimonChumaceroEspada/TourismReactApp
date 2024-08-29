@@ -6,9 +6,6 @@ public class PlacesDbContext : DbContext
   public PlacesDbContext(DbContextOptions<PlacesDbContext> options) : base(options) { }
 
   public DbSet<Place> Place { get; set; }
-  public DbSet<TouristicPlace> TouristicPlace { get; set; } // Agregar DbSet para TouristicPlace
-  public DbSet<Food> Food { get; set; }
-  public DbSet<Party> Party { get; set; }
   public DbSet<PlacesData> PlacesData { get; set; }
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -24,97 +21,23 @@ public class PlacesDbContext : DbContext
       entity.Property(p => p.image).HasMaxLength(3000);
       entity.Property(p => p.esp_description).HasMaxLength(3000);
       entity.Property(p => p.eng_description).HasMaxLength(3000);
-
-      // Configurar la relación con TouristicPlaces
-      entity.HasMany(p => p.touristic_places)
-                .WithOne(t => t.Place)
-                .HasForeignKey(t => t.place_id)
-                .OnDelete(DeleteBehavior.Cascade);
     });
 
-    // Configuración de la entidad TouristicPlace
-    modelBuilder.Entity<TouristicPlace>(entity =>
-{
-  entity.ToTable("touristic_places");
-  entity.HasKey(e => e.id);
-  entity.Property(e => e.esp_name)
-          .IsRequired()
-          .HasMaxLength(100);
-  entity.Property(e => e.eng_name)
-          .IsRequired()
-          .HasMaxLength(100);
-  entity.Property(e => e.esp_description)
-          .IsRequired()
-          .HasMaxLength(3000);
-  entity.Property(e => e.eng_description)
-          .IsRequired()
-          .HasMaxLength(3000);
-  entity.Property(e => e.image)
-          .IsRequired()
-          .HasMaxLength(3000);
-  entity.HasOne(e => e.Place)
-          .WithMany(p => p.touristic_places)
-          .HasForeignKey(e => e.place_id)
-          .OnDelete(DeleteBehavior.Cascade);
-});
-
-    // Configuración de la entidad Food
-    modelBuilder.Entity<Food>(entity =>
+    // Configuración de la entidad PlacesData
+    modelBuilder.Entity<PlacesData>(entity =>
     {
-      entity.ToTable("foods");
-      entity.HasKey(e => e.id);
-      entity.Property(e => e.esp_name)
-            .IsRequired()
-            .HasMaxLength(100);
-      entity.Property(e => e.eng_name)
-            .IsRequired()
-            .HasMaxLength(100);
-      entity.Property(e => e.esp_description)
-            .IsRequired()
-            .HasMaxLength(3000);
-      entity.Property(e => e.eng_description)
-            .IsRequired()
-            .HasMaxLength(3000);
-      entity.Property(e => e.image)
-            .IsRequired()
-            .HasMaxLength(3000);
-      entity.HasOne(e => e.Place)
-            .WithMany(p => p.foods)
-            .HasForeignKey(e => e.place_id)
-            .OnDelete(DeleteBehavior.Cascade);
-    });
-
-
-    modelBuilder.Entity<Party>(entity =>
-    {
-      entity.ToTable("parties");
+      entity.ToTable("places_data");
       entity.HasKey(e => e.id);
       entity.Property(e => e.esp_name).IsRequired().HasMaxLength(100);
       entity.Property(e => e.eng_name).IsRequired().HasMaxLength(100);
-      entity.Property(e => e.esp_description).IsRequired().HasMaxLength(3000);
-      entity.Property(e => e.eng_description).IsRequired().HasMaxLength(3000);
-      entity.Property(e => e.image).IsRequired().HasMaxLength(3000);
-      entity.HasOne(e => e.Place)
-               .WithMany(p => p.parties)
-               .HasForeignKey(e => e.place_id)
-               .OnDelete(DeleteBehavior.Cascade);
-
-      modelBuilder.Entity<PlacesData>(entity =>
-      {
-        entity.ToTable("places_data");
-        entity.HasKey(e => e.id);
-        entity.Property(e => e.esp_name).IsRequired().HasMaxLength(100);
-        entity.Property(e => e.eng_name).IsRequired().HasMaxLength(100);
-        entity.Property(e => e.esp_description).HasMaxLength(3000);
-        entity.Property(e => e.eng_description).HasMaxLength(3000);
-        entity.Property(e => e.image).HasMaxLength(3000);
-        entity.Property(e => e.type).IsRequired().HasMaxLength(50);
-        entity.HasOne(e => e.place)
-                .WithMany(p => p.places_data)
-                .HasForeignKey(e => e.place_id)
-                .OnDelete(DeleteBehavior.Cascade);
-      });
-
+      entity.Property(e => e.esp_description).HasMaxLength(3000);
+      entity.Property(e => e.eng_description).HasMaxLength(3000);
+      entity.Property(e => e.image).HasMaxLength(3000);
+      entity.Property(e => e.type).IsRequired().HasMaxLength(50);
+      entity.HasOne(e => e.place)
+            .WithMany(p => p.places_data)
+            .HasForeignKey(e => e.place_id)
+            .OnDelete(DeleteBehavior.Cascade);
     });
 
     base.OnModelCreating(modelBuilder);
