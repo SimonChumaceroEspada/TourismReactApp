@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import Chuquisaca from './pages/Chuquisaca'; // Asegúrate de que el nombre y la ruta sean correctos
+import Chuquisaca from './pages/chuquisaca'; // Asegúrate de que el nombre y la ruta sean correctos
 import './index.css';
 
 function App() {

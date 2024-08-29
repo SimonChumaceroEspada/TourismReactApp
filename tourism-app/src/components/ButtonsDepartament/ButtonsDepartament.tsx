@@ -9,12 +9,21 @@ const ArrowButton: React.FC<ArrowButtonProps> = ({ direction, onClick }) => {
   return (
     <button
       onClick={onClick}
-      className={`w-0 h-0 border-t-[16px] border-t-transparent border-b-[16px] border-b-transparent ${
-        direction === 'left'
-          ? 'border-r-[16px] border-r-[#B65172]'
-          : 'border-l-[16px] border-l-[#B65172]'
-      }`}
-    />
+      className={`w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center
+        hover:bg-gray-300 transition-colors`}
+    >
+      <svg
+        className={`w-4 h-4 text-gray-600 ${direction === 'left' ? 'transform rotate-180' : ''}`}
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path d="M9 5l7 7-7 7"></path>
+      </svg>
+    </button>
   );
 };
 
