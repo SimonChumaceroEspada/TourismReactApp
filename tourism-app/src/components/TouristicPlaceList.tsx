@@ -1,47 +1,23 @@
 import React from "react";
-import { ScrollView, View, Text, Image, StyleSheet } from "react-native";
 import useTouristicPlaces from "../hooks/useTouristicPlaces";
 
 const TouristicPlacesList = () => {
   const touristicPlaces = useTouristicPlaces();
 
   return (
-    <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.title}>Lista de Lugares</Text>
+    <div className="p-4">
+      <h1 className="text-2xl font-bold mb-4">Lista de Lugares</h1>
       {touristicPlaces.map((touristicPlace) => (
-        <View key={touristicPlace.id} style={styles.item}>
-          <Text style={styles.name}>espName: {touristicPlace.espName}</Text>
-          <Text style={styles.name}>engName: {touristicPlace.engName}</Text>
-          <Text>engDescription: {touristicPlace.engDescription}</Text>
-          <Text>espDescription: {touristicPlace.espDescription}</Text>
-          <Image source={{ uri: touristicPlace.image }} style={styles.image} />
-        </View>
+        <div key={touristicPlace.id} className="mb-6">
+          <h2 className="text-lg font-semibold">espName: {touristicPlace.espName}</h2>
+          <h2 className="text-lg font-semibold">engName: {touristicPlace.engName}</h2>
+          <p>engDescription: {touristicPlace.engDescription}</p>
+          <p>espDescription: {touristicPlace.espDescription}</p>
+          <img src={touristicPlace.image} alt={touristicPlace.engName} className="w-48 h-48 object-cover" />
+        </div>
       ))}
-    </ScrollView>
+    </div>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    padding: 10,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: "bold",
-    marginBottom: 10,
-  },
-  item: {
-    marginBottom: 20,
-  },
-  name: {
-    fontSize: 18,
-    fontWeight: "bold",
-  },
-  image: {
-    width: 200,
-    height: 200,
-  },
-});
-
 export default TouristicPlacesList;
-
