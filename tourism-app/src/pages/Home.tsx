@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import Header from '../components/Header/Header';
 import Card from '../components/Card/Card';
 import CarouselButtons from '../components/CarrouselButtons/CarrouselButtons';
-import useTouristicPlaces from '../hooks/useTouristicPlaces';
+import useTouristicPlacesById from '../hooks/useTouristicPlacesById';
 import Flag from '../components/Flag/Flag'; 
 import Button from '../components/Button/Button';
 
 const Home: React.FC = () => {
   const [activeCard, setActiveCard] = useState(0);
   const [language, setLanguage] = useState<'en' | 'es'>('en');
-  const touristicPlaces = useTouristicPlaces();
+  const touristicPlaces = useTouristicPlacesById();
 
   useEffect(() => {
     const interval = setInterval(() => {

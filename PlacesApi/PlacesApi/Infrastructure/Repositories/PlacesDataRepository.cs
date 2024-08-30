@@ -28,6 +28,31 @@ namespace PlacesApi.Infrastructure.Repositories
         {
             return await _context.PlacesData.FirstOrDefaultAsync(pd => pd.eng_name.ToLower() == name.ToLower() || pd.esp_name.ToLower() == name.ToLower());
         }
+
+        public async Task<IEnumerable<PlacesData>> GetByPlaceIdAsync(int placeId)
+        {
+            return await _context.PlacesData.Where(pd => pd.place_id == placeId).ToListAsync();
+        }
+
+        public async Task<IEnumerable<PlacesData>> GetByTypeAsync(string type)
+        {
+            return await _context.PlacesData.Where(pd => pd.type.ToLower() == type.ToLower()).ToListAsync();
+        }
+
+        public async Task<IEnumerable<PlacesData>> GetByPlaceIdAndTypeAsync(int placeId, string type)
+        {
+            return await _context.PlacesData.Where(pd => pd.place_id == placeId && pd.type.ToLower() == type.ToLower()).ToListAsync();
+        }
+
+        public async Task<IEnumerable<PlacesData>> GetByIdsAsync(int[] ids)
+        {
+            return await _context.PlacesData.Where(pd => ids.Contains(pd.id)).ToListAsync();
+        }
+
+        public async Task<IEnumerable<PlacesData>> GetByPlaceIdsAsync(int[] placeIds)
+        {
+            return await _context.PlacesData.Where(pd => placeIds.Contains(pd.place_id)).ToListAsync();
+        }
     }
 
 }

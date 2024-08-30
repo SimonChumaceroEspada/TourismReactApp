@@ -46,8 +46,27 @@ namespace PlacesApi.API.Controllers
                 return NotFound(new { Message = ex.Message });
             }
         }
-       
+
+        [HttpGet("byIds")]
+        public async Task<IActionResult> GetPlacesDataByIds([FromQuery] int[] ids)
+        {
+            var placesData = await _placesDataService.GetPlacesDataByIdsAsync(ids);
+            return Ok(placesData);
+        }
+
+        [HttpGet("byPlaceId")]
+        public async Task<IActionResult> GetPlacesDataByPlaceId([FromQuery] int placeId)
+        {
+            try
+            {
+                var placesData = await _placesDataService.GetPlacesDataByPlaceIdAsync(placeId);
+                return Ok(placesData);
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(new { Message = ex.Message });
+            }
+        }
 
     }
 }
-    

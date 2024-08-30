@@ -70,5 +70,37 @@ namespace PlacesApi.Application.Services
                 PlaceId = placesData.place_id,
             };
         }
+
+        public async Task<IEnumerable<PlacesDataDTO>> GetPlacesDataByIdsAsync(int[] ids)
+        {
+            var placesData = await _placesDataRepository.GetByIdsAsync(ids);
+            return placesData.Select(p => new PlacesDataDTO
+            {
+                Id = p.id,
+                EspName = p.esp_name,
+                EngName = p.eng_name,
+                Image = p.image,
+                EspDescription = p.esp_description,
+                EngDescription = p.eng_description,
+                PlaceId = p.place_id,
+                Type = p.type,
+            }).ToList();
+        }
+
+        public async Task<IEnumerable<PlacesDataDTO>> GetPlacesDataByPlaceIdAsync(int placeId)
+        {
+            var placesData = await _placesDataRepository.GetByPlaceIdAsync(placeId);
+            return placesData.Select(p => new PlacesDataDTO
+            {
+                Id = p.id,
+                EspName = p.esp_name,
+                EngName = p.eng_name,
+                Image = p.image,
+                EspDescription = p.esp_description,
+                EngDescription = p.eng_description,
+                PlaceId = p.place_id,
+                Type = p.type,
+            }).ToList();
+        }
     }
 }
