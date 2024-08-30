@@ -44,7 +44,7 @@ const Chuquisaca = () => {
               <ArrowButton direction="left" onClick={handlePrev} />
               <ArrowButton direction="right" onClick={handleNext} />
             </div>
-            <div className="flex flex-wrap lg:flex-nowrap justify-center lg:justify-between items-end w-full gap-4 lg:gap-8">
+            <div className="flex flex-wrap lg:flex-nowrap justify-center lg:justify-between items-center w-full gap-4 lg:gap-8">
               <AnimatePresence initial={false}>
                 {reorderedImages.map((image, index) => (
                   <motion.div
@@ -54,11 +54,11 @@ const Chuquisaca = () => {
                     animate={{ 
                       scale: 1, 
                       opacity: 1,
-                      y: index === 1 ? 20 : 0 // Ajusta este valor según necesites
+                      y: index === 1 ? 0 : 0 // Ajusta este valor según necesites
                     }}
                     exit={{ scale: 0.8, opacity: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="flex-shrink-0"
+                    className="flex-shrink-0 flex-grow-0"
                   >
                     <Card
                       image={image.src}
