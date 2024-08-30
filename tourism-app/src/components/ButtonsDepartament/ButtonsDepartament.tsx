@@ -1,11 +1,11 @@
 import React from 'react';
 
-interface ArrowButtonProps {
+interface ButtonsDepartament {
   direction: 'left' | 'right';
   onClick: () => void;
 }
 
-const ArrowButton: React.FC<ArrowButtonProps> = ({ direction, onClick }) => {
+const ButtonsDepartament: React.FC<ButtonsDepartament> = ({ direction, onClick }) => {
   return (
     <button
       onClick={onClick}
@@ -27,4 +27,4 @@ const ArrowButton: React.FC<ArrowButtonProps> = ({ direction, onClick }) => {
   );
 };
 
-export default ArrowButton;
+export default ButtonsDepartament;

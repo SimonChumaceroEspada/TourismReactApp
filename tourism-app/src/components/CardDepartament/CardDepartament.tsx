@@ -1,23 +1,22 @@
 import React from 'react';
 
-interface CardProps {
+interface CardDepartament {
   image: string;
   alt: string;
-  isActive: boolean;
+  size: 'large' | 'small';
 }
 
-const Card: React.FC<CardProps> = ({ image, alt, isActive }) => {
+const Card: React.FC<CardDepartament> = ({ image, alt, size }) => {
   return (
-    <div className={`
-      ${isActive ? 'w-full h-96' : 'w-24 h-32'}
-      transition-all duration-300 ease-in-out
-      bg-white rounded-2xl shadow-lg overflow-hidden
-      border-4 border-white
-    `}>
+    <div
+      className={`p-3 bg-white rounded-2xl shadow-lg ${
+        size === 'large' ? 'w-[20rem] h-[25rem]' : 'w-[16rem] h-[22rem]'
+      }`} 
+    >
       <img
         src={image}
         alt={alt}
-        className="w-full h-full object-cover"
+        className="w-full h-full object-cover rounded-xl"
       />
     </div>
   );

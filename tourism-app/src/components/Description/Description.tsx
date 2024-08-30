@@ -1,8 +1,12 @@
 import React from 'react';
 
-const Description: React.FC = () => {
+interface DescriptionProps {
+  className?: string; 
+}
+
+const Description: React.FC<DescriptionProps> = ({ className }) => {
   return (
-    <div className="flex flex-col justify-center h-full text-left">
+    <div className={`flex flex-col justify-center h-full text-left ${className}`}>
       <h2 className="text-3xl font-semibold text-[#B65172] mb-4">Castle of Gloriet</h2>
       <p className="text-[#333333] text-sm">
         A whimsical castle near Sucre, Bolivia, built by self-proclaimed royalty. 
