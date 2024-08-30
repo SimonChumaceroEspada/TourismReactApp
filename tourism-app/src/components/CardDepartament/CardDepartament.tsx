@@ -6,7 +6,7 @@ interface CardDepartament {
   size: 'large' | 'small';
 }
 
-const Card: React.FC<CardDepartament> = ({ image, alt, size }) => {
+const CardDepartament: React.FC<CardDepartament> = ({ image, alt, size }) => {
   return (
     <div
       className={`p-3 bg-white rounded-2xl shadow-lg ${
@@ -22,4 +22,4 @@ const Card: React.FC<CardDepartament> = ({ image, alt, size }) => {
   );
 };
 
-export default Card;
+export default CardDepartament;
