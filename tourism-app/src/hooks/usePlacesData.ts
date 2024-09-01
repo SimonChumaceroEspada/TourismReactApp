@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-interface PlacesDataChuquisaca {
+interface PlacesData {
   id: number;
   espName: string;
   engName: string;
@@ -12,39 +12,33 @@ interface PlacesDataChuquisaca {
   placeId: number;
 }
 
-const usePlacesDataForChuquisaca = () => {
-  const [touristicPlacesData, setTouristicPlacesData] = useState<
-    PlacesDataChuquisaca[]
-  >([]);
-  const [foodsData, setFoodsData] = useState<PlacesDataChuquisaca[]>([]);
-  const [partiesData, setPartiesData] = useState<PlacesDataChuquisaca[]>([]);
+const usePlacesData = (placeId: number) => {
+
+  const [touristicPlacesData, setTouristicPlacesData] = useState<PlacesData[]>([]);
+  const [foodsData, setFoodsData] = useState<PlacesData[]>([]);
+  const [partiesData, setPartiesData] = useState<PlacesData[]>([]);
   const [error, setError] = useState<string | null>(null);
-  // placeId for Chuquisaca is 3
-  const placeId = 3;
 
   useEffect(() => {
     const fetchPlacesData = async () => {
       try {
         const response = await axios.get(
-          "https://localhost:7183/api/PlacesData/byPlaceId?placeId=" + placeId,
+          "https://localhost:7183/api/PlacesData/byPlaceId?placeId=" + placeId
         );
         const data = response.data;
 
         const filteredTouristicPlaces = data.filter(
-          (place: PlacesDataChuquisaca) =>
+          (place: PlacesData) =>
             place.type === "touristic_place" && place.placeId === placeId
         );
         const filteredFoods = data.filter(
-          (place: PlacesDataChuquisaca) =>
+          (place: PlacesData) =>
             place.type === "food" && place.placeId === placeId
         );
         const filteredParties = data.filter(
-          (place: PlacesDataChuquisaca) =>
+          (place: PlacesData) =>
             place.type === "party" && place.placeId === placeId
         );
-        // console.log("filteredTouristicPlaces", filteredTouristicPlaces);
-        // console.log("filteredFoods", filteredFoods);
-        // console.log("filteredParties", filteredParties);
         setTouristicPlacesData(filteredTouristicPlaces);
         setFoodsData(filteredFoods);
         setPartiesData(filteredParties);
@@ -60,4 +54,4 @@ const usePlacesDataForChuquisaca = () => {
   return { touristicPlacesData, foodsData, partiesData, error };
 };
 
-export default usePlacesDataForChuquisaca;
+export default usePlacesData;

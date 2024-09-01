@@ -5,16 +5,18 @@ import Flag from "../components/Flag/Flag";
 import Tabs from "../components/Tabs/Tabs";
 import ArrowButton from "../components/ButtonsDepartament/ButtonsDepartament";
 import CardDepartament from "../components/CardDepartament/CardDepartament";
-import usePlacesDataForChuquisaca from "../hooks/usePlacesDataForChuquisaca";
+import usePlacesData from "../hooks/usePlacesData";
 import { useLanguage } from "../context/LanguageContext";
+import usePlaces from "../hooks/usePlaces";
 
 type TabName = "Places" | "Traditional Food" | "Events Calendar";
 
 const Chuquisaca: React.FC = () => {
+  const placesId = 3;
   const [currentIndex, setCurrentIndex] = useState(0);
   const [activeTab, setActiveTab] = useState<TabName>("Places");
   const { foodsData, touristicPlacesData, partiesData } =
-    usePlacesDataForChuquisaca();
+    usePlacesData(placesId);
   const { language, setLanguage } = useLanguage();
   const handleLanguageChange = () => {
     setLanguage((prev) => (prev === "en" ? "es" : "en"));

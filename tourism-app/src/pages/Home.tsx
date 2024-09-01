@@ -22,7 +22,7 @@ const Home: React.FC = () => {
       );
     }, 3000);
 
-    return () => clearInterval(interval); // Limpiar el intervalo al desmontar
+    return () => clearInterval(interval); 
   }, [touristicPlaces.length]);
 
   const handleCardChange = (index: number) => {
@@ -69,7 +69,9 @@ const Home: React.FC = () => {
           </div>
           <div className="flex items-center justify-center w-full md:w-1/2 mt-8 md:mt-0">
             <Button onClick={() => alert("Explore More about Bolivia")}>
-              Explore More about Bolivia
+              {	
+              language === "en" ? "Explore More about Bolivia!" : "Explora más sobre Bolivia!"
+              }
             </Button>
           </div>
         </div>
