@@ -67,20 +67,12 @@ const Chuquisaca: React.FC = () => {
       <main className="flex-1 flex flex-col p-4 md:p-6 max-w-6xl mx-auto w-full">
         <Tabs onTabChange={setActiveTab} />
         <div className="flex flex-col lg:flex-row justify-between items-start gap-6 lg:gap-12 min-h-[calc(100vh-300px)]">
-          <div className="w-full lg:w-1/4 mb-6 lg:mb-0">
-            {/* <h2 className="text-3xl font-semibold text-[#B65172] mb-4">
-              {dataForActiveTab[currentIndex]?.espName}
-            </h2>
-             */}
+          <div className="w-full lg:w-1/4 mb-6 lg:mb-0 text-center">
             <h2 className="text-3xl font-semibold text-[#B65172] mb-4">
               {language === "en"
                 ? dataForActiveTab[currentIndex]?.engName
                 : dataForActiveTab[currentIndex]?.espName}
             </h2>
-            {/* Display description based on active tab */}
-            {/* <p className="text-[#333333] text-sm">
-              {dataForActiveTab[currentIndex]?.espDescription}
-            </p> */}
             <p className="text-[#333333] text-sm">
               {language === "en"
                 ? dataForActiveTab[currentIndex]?.engDescription

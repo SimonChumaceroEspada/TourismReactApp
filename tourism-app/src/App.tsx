@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import Chuquisaca from './pages/chuquisaca';
+import Chuquisaca from './pages/Chuquisaca';
 import { LanguageProvider } from './context/LanguageContext';
 import './index.css';
 

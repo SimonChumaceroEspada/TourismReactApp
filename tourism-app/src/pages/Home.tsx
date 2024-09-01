@@ -44,7 +44,7 @@ const Home: React.FC = () => {
                 {touristicPlaces.map((place, index) => (
                   <div
                     key={place.id}
-                    className="flex-shrink-0 w-full h-auto flex items-center justify-center px-4 md:px-6"
+                    className="flex-shrink-0 w-full h-auto flex items-center justify-center px-4 md:px-6"                    
                   >
                     <Card
                       title={language === "en" ? place.engName : place.espName}
