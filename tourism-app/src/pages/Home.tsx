@@ -38,7 +38,7 @@ const Home: React.FC = () => {
                 className="flex transition-transform duration-500"
                 style={{ transform: `translateX(-${activeCard * 100}%)` }}
               >
-                {touristicPlaces.map((place, index) => (
+                {touristicPlaces.map((place) => (
                   <div
                     key={place.id}
                     className="flex-shrink-0 w-full h-auto flex items-center justify-center px-4 md:px-6"                    
