@@ -6,8 +6,27 @@ import useTouristicPlacesById from "../hooks/useTouristicPlacesById";
 import Flag from "../components/Flag/Flag";
 import Button from "../components/Button/Button";
 import { useLanguage } from "../context/LanguageContext";
+import { useNavigate } from "react-router-dom";
 
 const Home: React.FC = () => {
+  const pages = [
+    "/chuquisaca",
+    "/santa cruz",
+    "/la paz",
+    "/cochabamba",
+    "/oruro",
+    "/potosí",
+    "/tarija",
+    "/beni",
+    "/pando",
+  ];
+
+  const handleRandomNavigation = () => {
+    const randomPage = pages[Math.floor(Math.random() * pages.length)];
+    navigate(randomPage);
+  };
+
+  const navigate = useNavigate();
   const [activeCard, setActiveCard] = useState(0);
   const touristicPlaces = useTouristicPlacesById();
   const { language } = useLanguage();
@@ -19,7 +38,7 @@ const Home: React.FC = () => {
       );
     }, 3000);
 
-    return () => clearInterval(interval); 
+    return () => clearInterval(interval);
   }, [touristicPlaces.length]);
 
   const handleCardChange = (index: number) => {
@@ -41,7 +60,7 @@ const Home: React.FC = () => {
                 {touristicPlaces.map((place) => (
                   <div
                     key={place.id}
-                    className="flex-shrink-0 w-full h-auto flex items-center justify-center px-4 md:px-6"                    
+                    className="flex-shrink-0 w-full h-auto flex items-center justify-center px-4 md:px-6"
                   >
                     <Card
                       title={language === "en" ? place.engName : place.espName}
@@ -65,10 +84,10 @@ const Home: React.FC = () => {
             </div>
           </div>
           <div className="flex items-center justify-center w-full md:w-1/2 mt-8 md:mt-0">
-            <Button onClick={() => alert("Explore More about Bolivia")}>
-              {	
-              language === "en" ? "Explore More about Bolivia!" : "Explora más sobre Bolivia!"
-              }
+            <Button onClick={handleRandomNavigation}>
+              {language === "en"
+                ? "Explore More about Bolivia!"
+                : "Explora más sobre Bolivia!"}
             </Button>
           </div>
         </div>
