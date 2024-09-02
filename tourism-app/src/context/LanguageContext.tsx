@@ -1,27 +1,32 @@
-// tourism-app/src/context/LanguageContext.tsx
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
-interface LanguageContextProps {
+// Define the context
+const LanguageContext = createContext<{
   language: string;
-  setLanguage: React.Dispatch<React.SetStateAction<string>>;
-}
+  setLanguage: (language: string) => void;
+}>({
+  language: 'en',
+  setLanguage: () => {},
+});
 
-const LanguageContext = createContext<LanguageContextProps | undefined>(undefined);
+// Custom hook to use the language context
+export const useLanguage = () => useContext(LanguageContext);
 
+// Language provider component
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<string>('en');
+  const [language, setLanguage] = useState<string>(() => {
+    // Retrieve language from localStorage or default to 'en'
+    return localStorage.getItem('language') || 'en';
+  });
+
+  useEffect(() => {
+    // Update localStorage whenever the language changes
+    localStorage.setItem('language', language);
+  }, [language]);
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>
       {children}
     </LanguageContext.Provider>
   );
-};
-
-export const useLanguage = (): LanguageContextProps => {
-  const context = useContext(LanguageContext);
-  if (!context) {
-    throw new Error('useLanguage must be used within a LanguageProvider');
-  }
-  return context;
 };

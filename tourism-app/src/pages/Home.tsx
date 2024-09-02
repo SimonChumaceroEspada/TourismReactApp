@@ -6,14 +6,30 @@ import useTouristicPlacesById from "../hooks/useTouristicPlacesById";
 import Flag from "../components/Flag/Flag";
 import Button from "../components/Button/Button";
 import { useLanguage } from "../context/LanguageContext";
+import { useNavigate } from "react-router-dom";
 
 const Home: React.FC = () => {
+  const pages = [
+    "/chuquisaca",
+    "/santa cruz",
+    "/la paz",
+    "/cochabamba",
+    "/oruro",
+    "/potosí",
+    "/tarija",
+    "/beni",
+    "/pando",
+  ];
+
+  const handleRandomNavigation = () => {
+    const randomPage = pages[Math.floor(Math.random() * pages.length)];
+    navigate(randomPage);
+  };
+
+  const navigate = useNavigate();
   const [activeCard, setActiveCard] = useState(0);
   const touristicPlaces = useTouristicPlacesById();
-  const { language, setLanguage } = useLanguage();
-  const handleLanguageChange = () => {
-    setLanguage((prev) => (prev === "en" ? "es" : "en"));
-  };
+  const { language } = useLanguage();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -22,7 +38,7 @@ const Home: React.FC = () => {
       );
     }, 3000);
 
-    return () => clearInterval(interval); // Limpiar el intervalo al desmontar
+    return () => clearInterval(interval);
   }, [touristicPlaces.length]);
 
   const handleCardChange = (index: number) => {
@@ -31,7 +47,7 @@ const Home: React.FC = () => {
 
   return (
     <div className="bg-[#FFF8E1] font-['Arial', 'sans-serif'] min-h-screen flex flex-col">
-      <Header onLanguageChange={handleLanguageChange} />
+      <Header />
       <Flag />
       <main className="flex-1 flex flex-col overflow-y-auto p-8">
         <div className="flex flex-col md:flex-row w-full">
@@ -41,7 +57,7 @@ const Home: React.FC = () => {
                 className="flex transition-transform duration-500"
                 style={{ transform: `translateX(-${activeCard * 100}%)` }}
               >
-                {touristicPlaces.map((place, index) => (
+                {touristicPlaces.map((place) => (
                   <div
                     key={place.id}
                     className="flex-shrink-0 w-full h-auto flex items-center justify-center px-4 md:px-6"
@@ -68,8 +84,10 @@ const Home: React.FC = () => {
             </div>
           </div>
           <div className="flex items-center justify-center w-full md:w-1/2 mt-8 md:mt-0">
-            <Button onClick={() => alert("Explore More about Bolivia")}>
-              Explore More about Bolivia
+            <Button onClick={handleRandomNavigation}>
+              {language === "en"
+                ? "Explore More about Bolivia!"
+                : "Explora más sobre Bolivia!"}
             </Button>
           </div>
         </div>

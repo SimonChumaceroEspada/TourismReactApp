@@ -11,8 +11,8 @@ import { useLanguage } from "../context/LanguageContext";
 // Cambiar los nombres de las pestañas
 type TabName = "Tourist Sites" | "Traditional Food" | "Traditional Celebrations";
 
-const Chuquisaca: React.FC = () => {
-  const placesId = 3;
+const SantaCruz: React.FC = () => {
+  const placesId = 2;
   const [currentIndex, setCurrentIndex] = useState(0);
   const [activeTab, setActiveTab] = useState<TabName>("Tourist Sites");
   const { foodsData, touristicPlacesData, partiesData } = usePlacesData(placesId);
@@ -113,4 +113,4 @@ const Chuquisaca: React.FC = () => {
   );
 };
 
-export default Chuquisaca;
+export default SantaCruz;
