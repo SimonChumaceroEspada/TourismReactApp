@@ -1,11 +1,13 @@
-import React from 'react';
-import { CardProps } from './Card.types';
+import React from "react";
+import { CardProps } from "./Card.types";
+import { useLanguage } from "../../context/LanguageContext";
 
 const Card: React.FC<CardProps> = ({ title, description, imageSrc }) => {
+  const { language } = useLanguage();
   return (
     <div className="bg-white rounded-3xl shadow-lg p-4 mb-8  w-full flex flex-col relative max-w-[550px] h-[650px]">
       <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#D32F2F] absolute top-0 left-1/2 transform -translate-x-1/2 mt-4 text-center w-full">
-        Welcome to
+        {language === 'en' ? 'Welcome to' : 'Bienvenidos a'}
       </h1>
       <img
         src={imageSrc}

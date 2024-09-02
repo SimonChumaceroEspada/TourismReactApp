@@ -1,25 +1,17 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
+import React from "react";
+import { useLocation } from "react-router-dom";
+import { useLanguage } from "../../context/LanguageContext";
 
-const departamentos = [
-  'Chuquisaca',
-  'Cochabamba',
-  'Tarija',
-  'La Paz',
-  'Santa Cruz',
-  'Potosí',
-  'Oruro',
-  'Pando',
-  'Beni',
-];
-
-interface HeaderProps {
-  onLanguageChange: () => void; // Función para cambiar el idioma
-}
-
-const Header: React.FC<HeaderProps> = ({ onLanguageChange }) => {
+const Header: React.FC = () => {
   const location = useLocation();
-  const isHome = location.pathname === '/';
+  const isHome = location.pathname === "/";
+  const { language, setLanguage } = useLanguage();
+
+  const toggleLanguage = () => {
+    setLanguage(language === "en" ? "es" : "en");
+  };
+
+  const departamentos = ["Chuquisaca", "Cochabamba", "La Paz", "Oruro", "Pando", "Potosí", "Santa Cruz", "Tarija", "Beni"];
 
   return (
     <header className="bg-[#FFF8E1] py-4 px-8 border-b border-[#B65172]">
@@ -30,7 +22,7 @@ const Header: React.FC<HeaderProps> = ({ onLanguageChange }) => {
               <a
                 href="/"
                 className={`text-[#333333] hover:text-[#B65172] ${
-                  isHome ? 'text-[#B65172]' : ''
+                  isHome ? "text-[#B65172]" : ""
                 }`}
               >
                 Home
@@ -49,10 +41,10 @@ const Header: React.FC<HeaderProps> = ({ onLanguageChange }) => {
           </ul>
           <div className="mt-4 md:mt-0 flex justify-center md:justify-end space-x-4">
             <button
-              onClick={onLanguageChange}
+              onClick={toggleLanguage}
               className="bg-[#209674] text-white w-8 h-8 flex items-center justify-center rounded-full hover:bg-[#1E8E7E]"
             >
-              🌐
+              {language === "en" ? "EN" : "ES"}
             </button>
           </div>
         </div>

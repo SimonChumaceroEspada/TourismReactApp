@@ -10,10 +10,7 @@ import { useLanguage } from "../context/LanguageContext";
 const Home: React.FC = () => {
   const [activeCard, setActiveCard] = useState(0);
   const touristicPlaces = useTouristicPlacesById();
-  const { language, setLanguage } = useLanguage();
-  const handleLanguageChange = () => {
-    setLanguage((prev) => (prev === "en" ? "es" : "en"));
-  };
+  const { language } = useLanguage();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -31,7 +28,7 @@ const Home: React.FC = () => {
 
   return (
     <div className="bg-[#FFF8E1] font-['Arial', 'sans-serif'] min-h-screen flex flex-col">
-      <Header onLanguageChange={handleLanguageChange} />
+      <Header />
       <Flag />
       <main className="flex-1 flex flex-col overflow-y-auto p-8">
         <div className="flex flex-col md:flex-row w-full">
