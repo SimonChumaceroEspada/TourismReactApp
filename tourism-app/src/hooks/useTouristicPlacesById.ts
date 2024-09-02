@@ -24,7 +24,6 @@ const useTouristicPlacesById = () => {
         const filteredPlaces = response.data.filter((place: TouristicPlace) =>
           [7, 8, 9].includes(place.id)
         );
-        console.log("filteredPlaces", filteredPlaces);
         setTouristicPlaces(filteredPlaces);
       } catch (error) {
         setError("Error occurred while fetching places");
