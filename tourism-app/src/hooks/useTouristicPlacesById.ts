@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import { supabase } from '../supabase/client';
 
 interface TouristicPlace {
   id: number;
-  espName: string;
-  engName: string;
-  espDescription: string;
-  engDescription: string;
+  esp_name: string;
+  eng_name: string;
+  esp_description: string;
+  eng_description: string;
   image: string;
-  placeId: number;
+  place_id: number;
 }
 
 const useTouristicPlacesById = () => {
@@ -18,23 +18,23 @@ const useTouristicPlacesById = () => {
   useEffect(() => {
     const fetchPlaces = async () => {
       try {
-        const response = await axios.get(
-          "https://localhost:7183/api/PlacesData/",
-        );
-        const filteredPlaces = response.data.filter((place: TouristicPlace) =>
-          [7, 8, 9].includes(place.id)
-        );
-        setTouristicPlaces(filteredPlaces);
+        const { data, error } = await supabase
+          .from('places')
+          .select('*')
+          .in('id', [7, 8, 9]);
+
+        if (error) throw error;
+        setTouristicPlaces(data);
       } catch (error) {
-        setError("Error occurred while fetching places");
         console.error("Error occurred while fetching places:", error);
+        setError("Error occurred while fetching places");
       }
     };
 
     fetchPlaces();
   }, []);
 
-  return touristicPlaces;
+  return { touristicPlaces, error };
 };
 
 export default useTouristicPlacesById;

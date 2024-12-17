@@ -63,13 +63,13 @@ const Chuquisaca: React.FC = () => {
           <div className="w-full lg:w-1/4 mb-6 lg:mb-0">
             <h2 className="text-3xl font-semibold text-[#B65172] mb-4 text-center">
               {language === "en"
-                ? dataForActiveTab[currentIndex]?.engName
-                : dataForActiveTab[currentIndex]?.espName}
+                ? dataForActiveTab[currentIndex]?.eng_name
+                : dataForActiveTab[currentIndex]?.esp_name}
             </h2>
             <p className="text-[#333333] text-sm">
               {language === "en"
-                ? dataForActiveTab[currentIndex]?.engDescription
-                : dataForActiveTab[currentIndex]?.espDescription}
+                ? dataForActiveTab[currentIndex]?.eng_description
+                : dataForActiveTab[currentIndex]?.esp_description}
             </p>
           </div>
           <div className="w-full lg:w-3/4 flex flex-col items-center">
@@ -95,7 +95,7 @@ const Chuquisaca: React.FC = () => {
                   >
                     <CardDepartament
                       image={item.image}
-                      alt={item.espName}
+                      alt={item.esp_name}
                       size={index === 0 ? "large" : "small"}
                     />
                   </motion.div>

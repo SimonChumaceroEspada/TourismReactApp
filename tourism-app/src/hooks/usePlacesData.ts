@@ -1,19 +1,18 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import { supabase } from '../supabase/client';
 
 interface PlacesData {
   id: number;
-  espName: string;
-  engName: string;
-  espDescription: string;
-  engDescription: string;
+  esp_name: string;
+  eng_name: string;
+  esp_description: string;
+  eng_description: string;
   image: string;
   type: string;
-  placeId: number;
+  place_id: number;
 }
 
 const usePlacesData = (placeId: number) => {
-
   const [touristicPlacesData, setTouristicPlacesData] = useState<PlacesData[]>([]);
   const [foodsData, setFoodsData] = useState<PlacesData[]>([]);
   const [partiesData, setPartiesData] = useState<PlacesData[]>([]);
@@ -22,23 +21,23 @@ const usePlacesData = (placeId: number) => {
   useEffect(() => {
     const fetchPlacesData = async () => {
       try {
-        const response = await axios.get(
-          "https://localhost:7183/api/PlacesData/byPlaceId?placeId=" + placeId
-        );
-        const data = response.data;
+        const { data, error } = await supabase
+          .from('places')
+          .select('*')
+          .eq('place_id', placeId);
+
+        if (error) throw error;
 
         const filteredTouristicPlaces = data.filter(
-          (place: PlacesData) =>
-            place.type === "touristic_place" && place.placeId === placeId
+          place => place.type === "touristic_place"
         );
         const filteredFoods = data.filter(
-          (place: PlacesData) =>
-            place.type === "food" && place.placeId === placeId
+          place => place.type === "food"
         );
         const filteredParties = data.filter(
-          (place: PlacesData) =>
-            place.type === "party" && place.placeId === placeId
+          place => place.type === "party"
         );
+
         setTouristicPlacesData(filteredTouristicPlaces);
         setFoodsData(filteredFoods);
         setPartiesData(filteredParties);
@@ -49,7 +48,7 @@ const usePlacesData = (placeId: number) => {
     };
 
     fetchPlacesData();
-  }, []);
+  }, [placeId]);
 
   return { touristicPlacesData, foodsData, partiesData, error };
 };

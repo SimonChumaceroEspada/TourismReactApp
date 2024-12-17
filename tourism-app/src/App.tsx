@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Chuquisaca from "./pages/Chuquisaca";
+import Chuquisaca from "./pages/chuquisaca";
 import { LanguageProvider } from "./context/LanguageContext";
 import "./index.css";
 import SantaCruz from "./pages/SantaCruz";
