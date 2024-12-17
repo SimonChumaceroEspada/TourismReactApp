@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { supabase } from '../supabase/client';
+import { supabase } from '../supabase/client'
 
 interface PlacesData {
   id: number;
@@ -22,7 +22,7 @@ const usePlacesData = (placeId: number) => {
     const fetchPlacesData = async () => {
       try {
         const { data, error } = await supabase
-          .from('places')
+          .from('places_data')
           .select('*')
           .eq('place_id', placeId);
 
