@@ -1,25 +1,28 @@
 import React from "react";
-import { CardProps } from "./Card.types";
 import { useLanguage } from "../../context/LanguageContext";
 
-const Card: React.FC<CardProps> = ({ title, description, imageSrc }) => {
+interface CardProps {
+  name: string;
+  description: string;
+  imageSrc: string;
+}
+
+const Card: React.FC<CardProps> = ({ name, description, imageSrc }) => {
   const { language } = useLanguage();
+
   return (
-    <div className="bg-white rounded-3xl shadow-lg p-4 mb-8  w-full flex flex-col relative max-w-[550px] h-[650px]">
-      <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#D32F2F] absolute top-0 left-1/2 transform -translate-x-1/2 mt-4 text-center w-full">
-        {language === 'en' ? 'Welcome to' : 'Bienvenidos a'}
+    <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white">
+      <h1 className="text-3xl font-bold text-center py-4 text-[#B65172]">
+        {language === "en" ? `Welcome to ${name}` : `Bienvenidos a ${name}`}
       </h1>
       <img
+        className="w-full h-64 object-cover"
         src={imageSrc}
-        alt={title}
-        className="w-full h-[50%] object-cover rounded-3xl mt-[3.5rem]"
+        alt={name}
       />
-      <div className="flex flex-col items-center mt-1 flex-grow px-4">
-        <h2 className="text-2xl md:text-4xl font-bold text-[#D32F2F] mb-2 text-center">
-          {title}
-        </h2>
-        <p className="text-gray-800 text-sm md:text-base text-center">
-          {description}
+      <div className="px-6 py-4">
+        <p className="text-gray-700 text-base">
+          {language === "en" ? description : description}
         </p>
       </div>
     </div>

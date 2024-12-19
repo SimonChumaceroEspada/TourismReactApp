@@ -3,12 +3,11 @@ import { supabase } from '../supabase/client';
 
 interface TouristicPlace {
   id: number;
-  esp_name: string;
-  eng_name: string;
+  name: string;
+  capital: string;
+  image: string;
   esp_description: string;
   eng_description: string;
-  image: string;
-  place_id: number;
 }
 
 const useTouristicPlacesById = () => {
@@ -18,10 +17,20 @@ const useTouristicPlacesById = () => {
   useEffect(() => {
     const fetchPlaces = async () => {
       try {
+        const getRandomIds = () => {
+          const ids = new Set<number>();
+          while (ids.size < 3) {
+            ids.add(Math.floor(Math.random() * 9) + 2); // Números del 2 al 10
+          }
+          return Array.from(ids);
+        };
+
+        const randomIds = getRandomIds();
+
         const { data, error } = await supabase
           .from('places')
           .select('*')
-          .in('id', [7, 8, 9]);
+          .in('id', randomIds);
 
         if (error) throw error;
         setTouristicPlaces(data);

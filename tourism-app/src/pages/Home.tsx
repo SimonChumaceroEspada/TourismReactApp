@@ -63,7 +63,7 @@ const Home: React.FC = () => {
                     className="flex-shrink-0 w-full h-auto flex items-center justify-center px-4 md:px-6"
                   >
                     <Card
-                      title={language === "en" ? place.eng_name : place.esp_name}
+                      name={place.name}
                       description={
                         language === "en"
                           ? place.eng_description
